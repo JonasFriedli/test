@@ -1,2 +1,2 @@
-reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v AutoConfigURL
-
+netsh winhttp show proxyreg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v AutoConfigURL
+netsh winhttp show proxy
